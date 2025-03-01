@@ -8,10 +8,10 @@ pipeline{
             }
         }
         stage('Test'){
-            sh './gradlew test'
+            steps{sh './gradlew test'}
         }
         stage('Deploy'){
-            sh 'nohup java -jar /spring.jar '
+            steps{sh 'nohup java -jar /spring.jar '}
         }
     }
 }
